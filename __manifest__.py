@@ -1,6 +1,6 @@
 {
     'name': 'bienes y raices',
-    'version': '18.0.1.0.0',
+    'version': '18.0.1.0.1',
     'summary': 'Modulo que permite la administracion de bienes y raices',
     'author': 'Gerardo Ali Ferraro Schelijasch',
     'license': 'LGPL-3',
