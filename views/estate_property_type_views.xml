@@ -15,12 +15,34 @@
                             <field name="name" placeholder=" Property Type"/>
                         </h1>
                     </div>
+                    <notebook>
+                        <page name ="properties" string="Properties">
+                            <field name="property_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="expected_price"/>
+                                    <field name="state"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>       
                 </sheet>
             </form>
         </field>
     </record>
 
-     <!-- View estate.property.type form -->
+    <record id="estate_property_type_list" model="ir.ui.view">
+        <field name="name">estate.property.type.list</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+            <list string="Property Types" multi_edit="1">
+                <field name = "sequence" widget="handle"/>
+                <field name="name"/>
+            </list>
+        </field>
+    </record>
+
+    
     <record id="estate_property_type_action" model="ir.actions.act_window">
         <field name="name">Property Types</field>
         <field name="res_model">estate.property.type</field>
@@ -37,4 +59,7 @@
             </p>
         </field>
     </record>
+
+    
+
 </odoo>

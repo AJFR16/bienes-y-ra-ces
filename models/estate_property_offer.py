@@ -4,6 +4,7 @@ from odoo.exceptions import UserError
 class EstatePropertyOffer(models.Model):
     _name = 'estate.property.offer'
     _description = 'Estate Property Offer'
+    _order = 'price desc'
 
     _sql_constraints = [("chek_price", "CHECK(price > 0)", "The offer price must be greater than 0!.")]
    
