@@ -5,6 +5,7 @@ from odoo.tools.float_utils import float_compare
 class EstateProperty(models.Model):
     _name = 'estate.property'
     _description = 'Estate Property'
+    _order = 'id desc'
     
     _sql_constraints = [
         ('check_expected_price', 'CHECK(expected_price > 0)', 'The expected price must be greater than 0!.'),
@@ -21,7 +22,7 @@ class EstateProperty(models.Model):
         ('sold', 'Sold'),
         ('canceled', 'Canceled'),
     ], string='Status', copy=False, required=True, default='new')
-    property_type_id = fields.Many2one(comodel_name='estate.property.type')
+    property_type_id = fields.Many2one(comodel_name='estate.property.type', string='Property Type')
     tag_ids = fields.Many2many(string='Property Tags', comodel_name='estate.property.tag')
     postcode = fields.Char()
     date_availability = fields.Date(
